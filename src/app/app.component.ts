@@ -21,13 +21,11 @@ export class AppComponent {
   };
   constructor(private readonly fb: FormBuilder) {
     this.myForm = this.fb.group({
-      city: ""
+      amtHigh: "",
+      amtLow: ""
     });
-    console.log("amopunt", this.myForm.controls.city);
-
-    this.myForm.controls.city.valueChanges.subscribe(console.log);
   }
   get amount() {
-    return this.myForm["city"] as FormControl;
+    return this.myForm["amtHigh"] as FormControl;
   }
 }
